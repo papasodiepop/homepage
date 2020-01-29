@@ -1,4 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Homepage v1
+
+This is a personal homepage for a web browser
 
 ## Available Scripts
 
