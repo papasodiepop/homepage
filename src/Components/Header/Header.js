@@ -7,6 +7,15 @@ class Header extends React.Component {
     state = {
         time: Clock()
     }
+    componentDidMount() {
+        this.interval = setInterval(
+            () => this.setState({ time: Clock() }),
+            1000
+        )
+    }
+    componentWillUnmount() {
+        clearInterval(this.interval)
+    }
     render() {
         return (
             <div>
@@ -19,16 +28,6 @@ class Header extends React.Component {
                 <Search className="Search" />
             </div>
         )
-    }
-
-    componentDidMount() {
-        this.interval = setInterval(
-            () => this.setState({ time: Clock() }),
-            1000
-        )
-    }
-    componentWillUnmount() {
-        clearInterval(this.interval)
     }
 }
 

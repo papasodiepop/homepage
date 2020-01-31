@@ -4,7 +4,15 @@ import Weather from './Components/Weather/Weather'
 import Calendar from './Components/Calendar/Calendar'
 import './App.css'
 const { weatherKey } = require('./config.json')
-
+const homepageHeader = {
+    'background-color': '#153646',
+    'min-height': '100vh',
+    display: 'flex',
+    'flex-direction': 'column',
+    'align-items': 'center',
+    'font-size': 'calc(10px + 2vmin)',
+    color: 'white'
+}
 class App extends React.Component {
     constructor(props) {
         super(props)
@@ -74,7 +82,7 @@ class App extends React.Component {
                         temp={this.state.degrees}
                     />
                 </div>
-                <div className="homepageHeader">
+                <div style={homepageHeader}>
                     <Header />
                 </div>
             </div>
