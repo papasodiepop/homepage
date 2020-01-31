@@ -4,10 +4,10 @@
 /node_modules
 /.pnp
 .pnp.js
-./config.json
+
 # testing
 /coverage
-
+/src/config.json
 # production
 /build
 

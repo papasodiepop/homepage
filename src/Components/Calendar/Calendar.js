@@ -1,11 +1,9 @@
 import React from 'react'
-
+import CalendarEvents from './CalendarEvents'
 
 class Calendar extends React.Component {
     render() {
-        return(
-            <h1>test</h1>
-        )
+        return <CalendarEvents />
     }
 }
 

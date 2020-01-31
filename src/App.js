@@ -65,13 +65,15 @@ class App extends React.Component {
     render() {
         return (
             <div className="Homepage">
-                <Calendar />
-                <Weather
-                    description={this.state.description}
-                    city={this.state.city}
-                    country={this.state.country}
-                    temp={this.state.degrees}
-                />
+                <div className="HomepageTop">
+                    <Calendar />
+                    <Weather
+                        description={this.state.description}
+                        city={this.state.city}
+                        country={this.state.country}
+                        temp={this.state.degrees}
+                    />
+                </div>
                 <div className="homepageHeader">
                     <Header />
                 </div>
