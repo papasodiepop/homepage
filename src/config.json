@@ -1,3 +1,10 @@
 {
-    "appKey":"41af469bc04d8bcff909e37ea5ac199f"
+    "weatherKey": "41af469bc04d8bcff909e37ea5ac199f",
+    "client_id": "536862330227-v2poko2v9g0475ple3id22ntoksnm3n5.apps.googleusercontent.com",
+    "project_id": "quickstart-1580421832663",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_secret": "UJH9ANXQr2Q12gwEqwLeK-K6",
+    "redirect_uris": ["urn:ietf:wg:oauth:2.0:oob", "http://localhost"]
 }
