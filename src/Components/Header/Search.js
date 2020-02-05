@@ -12,7 +12,7 @@ const searchBar = {
 
 const Search = () => {
     return (
-        <form action="http://www.google.com/search" method="get">
+        <form action="https://www.google.com/search" method="get">
             <input
                 style={searchBar}
                 className="searchBar"
