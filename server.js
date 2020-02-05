@@ -1,11 +1,10 @@
 const express = require('express')
-const path = require('path')
+
+// Configure & Run the http server
 const app = express()
 
-app.use(express.static(path.join(__dirname, 'build')))
 app.use(express.static(__dirname, { dotfiles: 'allow' }))
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'))
-})
 
-app.listen(80)
+app.listen(80, () => {
+    console.log('HTTP server running on port 80')
+})
