@@ -2,19 +2,18 @@ import React from 'react'
 
 const weatherContainer = {
     display: 'flex',
-    'flex-direction': 'column',
-    'align-items': 'flex-end',
-    'text-align': 'center'
+    flexDirection: 'column',
+    alignItems: 'flex-end',
+    textAlign: 'center'
 }
 
 const weather = {
-    'text-align': 'center',
+    textAlign: 'center',
     margin: '25px',
     width: '250px',
-    'box-shadow':
-        '0 3px 3px rgba(0, 0, 0, 0.16), 0 3px 3px rgba(0, 0, 0, 0.23)',
+    boxShadow: '0 3px 3px rgba(0, 0, 0, 0.16), 0 3px 3px rgba(0, 0, 0, 0.23)',
     color: 'rgb(20, 13, 13)',
-    'background-color': 'aliceblue'
+    backgroundColor: 'aliceblue'
 }
 
 const weatherMargin = {
@@ -22,7 +21,7 @@ const weatherMargin = {
 }
 
 const border = {
-    'border-bottom': '2px solid black',
+    borderBottom: '2px solid black',
     width: '70%',
     margin: '0 auto'
 }

@@ -38,7 +38,6 @@ class App extends React.Component {
     getCoordinates = async position => {
         return await new Promise((resolve, reject) => {
             navigator.geolocation.getCurrentPosition(resolve, reject)
-            console.log(position)
             let latitude = position.coords.latitude.toFixed(3)
             let longitude = position.coords.longitude.toFixed(3)
             latitude = parseFloat(latitude)
@@ -49,8 +48,6 @@ class App extends React.Component {
                 longitude: longitude
             })
             this.fetchWeather()
-            console.log(latitude + ' ' + longitude)
-            console.log(this.state)
         })
     }
 
@@ -58,8 +55,6 @@ class App extends React.Component {
         let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${this.state.latitude}&lon=${this.state.longitude}&units=metric&appid=${weatherKey}`
         const apiCall = await fetch(weatherUrl)
         const weatherData = await apiCall.json()
-        console.log(weatherData)
-        console.log(this.state)
         const intTemp = parseInt(weatherData.main.temp)
         this.setState({
             description: weatherData.weather['0'].description,
@@ -67,7 +62,6 @@ class App extends React.Component {
             country: weatherData.sys.country,
             degrees: intTemp
         })
-        console.log(weatherData)
     }
 
     render() {
