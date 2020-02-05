@@ -10,7 +10,7 @@ const privateKey = fs.readFileSync(
     'utf8'
 )
 const certificate = fs.readFileSync(
-    '/etc/letsencrypt/live/tomhornbucke.xyz/cert.pem',
+    '/etc/letsencrypt/live/tomhornbuckle.xyz/cert.pem',
     'utf8'
 )
 const ca = fs.readFileSync(
@@ -23,6 +23,7 @@ const credentials = {
     cert: certificate,
     ca: ca
 }
+
 const httpServer = http.createServer(app)
 const httpsServer = https.createServer(credentials, app)
 
