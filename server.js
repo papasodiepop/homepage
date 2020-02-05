@@ -1,10 +1,38 @@
+const fs = require('fs')
+const http = require('http')
+const https = require('https')
 const express = require('express')
-
-// Configure & Run the http server
+const path = require('path')
 const app = express()
 
-app.use(express.static(__dirname, { dotfiles: 'allow' }))
+const privateKey = fs.readFileSync(
+    '/etc/letsencrypt/live/tomhornbuckle.xyz/privkey.pem',
+    'utf8'
+)
+const certificate = fs.readFileSync(
+    '/etc/letsencrypt/live/tomhornbucke.xyz/cert.pem',
+    'utf8'
+)
+const ca = fs.readFileSync(
+    '/etc/letsencrypt/live/tomhornbuckle.xyz/chain.pem',
+    'utf8'
+)
 
-app.listen(80, () => {
-    console.log('HTTP server running on port 80')
+const credentials = {
+    key: privateKey,
+    cert: certificate,
+    ca: ca
+}
+const httpServer = http.createServer(app)
+const httpsServer = https.createServer(credentials, app)
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname + 'build/index.html'))
+})
+httpServer.listen(80, () => {
+    console.log('HTTP Server running on port 80')
+})
+
+httpsServer.listen(443, () => {
+    console.log('HTTPS Server running on port 443')
 })
