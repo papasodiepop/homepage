@@ -12,6 +12,7 @@ const homepageHeader = {
     'font-size': 'calc(10px + 2vmin)',
     color: 'white'
 }
+
 class App extends React.Component {
     constructor(props) {
         super(props)
