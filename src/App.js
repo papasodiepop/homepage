@@ -1,7 +1,6 @@
 import React from 'react'
 import Header from './Components/Header/Header'
 import Weather from './Components/Weather/Weather'
-import Calendar from './Components/Calendar/Calendar'
 import './App.css'
 const { weatherKey } = require('./config.json')
 const homepageHeader = {
@@ -68,7 +67,6 @@ class App extends React.Component {
         return (
             <div className="Homepage">
                 <div className="HomepageTop">
-                    <Calendar />
                     <Weather
                         description={this.state.description}
                         city={this.state.city}
