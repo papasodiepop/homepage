@@ -26,7 +26,6 @@ class App extends React.Component {
         }
         this.fetchLocation()
     }
-
     fetchLocation() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(this.getCoordinates)
