@@ -1,4 +1,5 @@
 import React from 'react'
+
 const searchBar = {
     width: '500px',
     height: '50px',
