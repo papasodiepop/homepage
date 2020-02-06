@@ -6,7 +6,16 @@ const path = require('path')
 const app = express()
 
 app.use(express.static(path.join(__dirname, 'build')))
-
+app.enable('trust proxy')
+app.use(function(req, res, next) {
+    if (req.secure) {
+        // https request, nothing to handle
+        next()
+    } else {
+        // this is an http request, redirect to https
+        res.redirect(301, 'https://' + req.headers.host + req.url)
+    }
+})
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'build', 'index.html'))
 })
@@ -36,7 +45,7 @@ const httpServer = http.createServer(app)
 const httpsServer = https.createServer(credentials, app)
 
 httpServer.listen(80, () => {
-    console.log('Http Server running on port 80')
+    console.log('HTTP Server running on port 80')
 })
 httpsServer.listen(443, () => {
     console.log('HTTPS Server running on port 443')
