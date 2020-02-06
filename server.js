@@ -32,7 +32,13 @@ const credentials = {
 
 const httpServer = http.createServer(app)
 const httpsServer = https.createServer(credentials, app)
+httpServer.get('*', function(req, res) {
+    res.redirect('https://' + req.headers.host + req.url)
+})
 
+httpServer.listen(8080, () => {
+    console.log('Http Server running on port 8080')
+})
 httpsServer.listen(443, () => {
     console.log('HTTPS Server running on port 443')
 })
