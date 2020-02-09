@@ -8,9 +8,13 @@ const weatherContainer = {
 }
 
 const weather = {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
     textAlign: 'center',
     margin: '25px',
     width: '250px',
+    height: '200px',
     boxShadow: '0 3px 3px rgba(0, 0, 0, 0.16), 0 3px 3px rgba(0, 0, 0, 0.23)',
     color: 'rgb(20, 13, 13)',
     backgroundColor: 'aliceblue'
