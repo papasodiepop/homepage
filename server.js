@@ -4,7 +4,7 @@ const https = require('https')
 const express = require('express')
 const path = require('path')
 const app = express()
-
+app.disable('x-powered-by')
 const privateKey = fs.readFileSync(
     '/etc/letsencrypt/live/tomhornbuckle.xyz/privkey.pem',
     'utf8'
@@ -22,6 +22,7 @@ const credentials = {
     cert: certificate,
     ca: ca
 }
+
 app.use(express.static(path.join(__dirname, 'build')))
 
 app.get('/', (req, res) => {
