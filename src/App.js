@@ -5,14 +5,15 @@ import Calendar from './Components/Calendar/Calendar'
 import './App.css'
 const { weatherKey } = require('./config.json')
 const homepageHeader = {
-    'background-color': '#153646',
-    'min-height': '100vh',
+    backgroundColor: '#153646',
+    height: '100vh',
     display: 'flex',
-    'flex-direction': 'column',
-    'align-items': 'center',
-    'font-size': 'calc(10px + 2vmin)',
+    flexDirection: 'column',
+    alignItems: 'center',
+    fontSize: 'calc(10px + 2vmin)',
     color: 'white'
 }
+
 class App extends React.Component {
     constructor(props) {
         super(props)
@@ -66,16 +67,16 @@ class App extends React.Component {
     render() {
         return (
             <div className="Homepage">
-                <div className="HomepageTop">
-                    <Calendar />
-                    <Weather
-                        description={this.state.description}
-                        city={this.state.city}
-                        country={this.state.country}
-                        temp={this.state.degrees}
-                    />
-                </div>
                 <div style={homepageHeader}>
+                    <div className="HomepageTop">
+                        <Calendar />
+                        <Weather
+                            description={this.state.description}
+                            city={this.state.city}
+                            country={this.state.country}
+                            temp={this.state.degrees}
+                        />
+                    </div>
                     <Header />
                 </div>
             </div>

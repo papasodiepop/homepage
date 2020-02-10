@@ -1,8 +1,10 @@
 import React from 'react'
-
+const TitleMargin = {
+    marginTop: '30%',
+    marginBottom: '0px'
+}
 const Title = () => {
-    
-    const titleChanger = (timeOfDayTitle) => {
+    const titleChanger = timeOfDayTitle => {
         timeOfDayTitle = 'Good Afternoon'
         let currentHours = new Date().getHours()
         if (currentHours <= 12) {
@@ -11,10 +13,10 @@ const Title = () => {
             timeOfDayTitle = 'Good Evening'
         }
         return timeOfDayTitle
-    }    
+    }
     return (
         <div>
-            {titleChanger()}, Tom
+            <p style={TitleMargin}>{titleChanger()}, Tom</p>
         </div>
     )
 }

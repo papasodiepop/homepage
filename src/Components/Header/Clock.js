@@ -5,7 +5,7 @@ const Clock = () => {
     let currentMinutes = currentTime.getMinutes()
 
     currentMinutes = (currentMinutes < 10 ? '0' : '') + currentMinutes
-    let timeOfDay = currentTime < 12 ? 'AM' : 'PM'
+    let timeOfDay = currentTime < 12 ? 'am' : 'pm'
     currentHours = (currentHours < 10 ? '0' : '') + currentHours
     currentHours = currentHours === 0 ? 12 : currentHours
 

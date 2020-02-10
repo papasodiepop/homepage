@@ -10,7 +10,8 @@
 .HomepageTop {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    width: 100%;
 }
 .searchBar::placeholder {
     color: white;
