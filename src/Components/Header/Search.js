@@ -4,8 +4,10 @@ const searchBar = {
     height: '50px',
     boxShadow: '0 3px 3px rgba(0, 0, 0, 0.16), 0 3px 3px rgba(0, 0, 0, 0.23)',
     fontSize: '0.8em',
+    color: 'white',
     paddingLeft: '25px',
     borderRadius: '100px',
+    outline: 'none',
     border: '0px',
     backgroundColor: '#ff5252'
 }

@@ -8,16 +8,28 @@ const weatherContainer = {
 }
 
 const weather = {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItem: 'center',
     textAlign: 'center',
     margin: '25px',
     width: '250px',
+    height: '200px',
     boxShadow: '0 3px 3px rgba(0, 0, 0, 0.16), 0 3px 3px rgba(0, 0, 0, 0.23)',
     color: 'rgb(20, 13, 13)',
-    backgroundColor: 'aliceblue'
+    backgroundColor: 'aliceblue',
+    borderRadius: '5px'
 }
 
-const weatherMargin = {
-    margin: '5px'
+const weatherTitle = {
+    margin: '0px',
+    fontSize: '1em'
+}
+
+const weatherText = {
+    margin: '5px',
+    fontSize: '.7em'
 }
 
 const border = {
@@ -30,11 +42,13 @@ const Weather = props => {
     return (
         <div style={weatherContainer}>
             <div style={weather}>
-                <h2 style={weatherMargin}>Weather</h2>
+                <h2 style={weatherTitle}>Weather</h2>
                 <div style={border}></div>
-                <h1 style={weatherMargin}>{props.temp}&deg;C </h1>
-                <p>{props.description}</p>
-                <p>
+                <h1 style={{ fontSize: '1.5em', margin: '0px' }}>
+                    {props.temp}&deg;C{' '}
+                </h1>
+                <p style={weatherText}>{props.description}</p>
+                <p style={weatherText}>
                     {props.city} {props.country}
                 </p>
             </div>

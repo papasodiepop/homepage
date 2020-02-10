@@ -7,7 +7,12 @@
     text-align: center;
     margin: 0px;
 }
-
+.HomepageTop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
 .searchBar::placeholder {
     color: white;
 }

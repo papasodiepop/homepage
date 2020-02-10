@@ -4,12 +4,12 @@ import Weather from './Components/Weather/Weather'
 import './App.css'
 const { weatherKey } = require('./config.json')
 const homepageHeader = {
-    'background-color': '#153646',
-    'min-height': '100vh',
+    backgroundColor: '#153646',
+    height: '100vh',
     display: 'flex',
-    'flex-direction': 'column',
-    'align-items': 'center',
-    'font-size': 'calc(10px + 2vmin)',
+    flexDirection: 'column',
+    alignItems: 'center',
+    fontSize: 'calc(10px + 2vmin)',
     color: 'white'
 }
 
@@ -26,7 +26,6 @@ class App extends React.Component {
         }
         this.fetchLocation()
     }
-
     fetchLocation() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(this.getCoordinates)
@@ -76,6 +75,15 @@ class App extends React.Component {
                     />
                 </div>
                 <div style={homepageHeader}>
+                    <div className="HomepageTop">
+                        <Calendar />
+                        <Weather
+                            description={this.state.description}
+                            city={this.state.city}
+                            country={this.state.country}
+                            temp={this.state.degrees}
+                        />
+                    </div>
                     <Header />
                 </div>
             </div>
